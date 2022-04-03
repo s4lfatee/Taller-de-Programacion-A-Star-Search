@@ -1,9 +1,9 @@
 #include "Maze.h"
 
-// Maze class used to generate and solve a maze (Represented as a matrix) with A* search algorithm
+// Clase de laberinto usada para generar y resolver un laberinto (Representado como una matriz) con el algoritmo A* de búsqueda
 
 Maze::Maze(int dim, int p) {
-    srand(time(NULL)); // set seed for random number generator
+    srand(time(NULL)); // Se setea una semilla para generar números aleatorios
     Maze::dim = dim;
     Maze::void_percentage=p;
     Maze::generate();
@@ -16,7 +16,7 @@ Maze::~Maze() {
     delete[] arr;
 }
 
-// Creates the maze by randomly assigning walls and voids given the void percentage
+// Crea un laberinto aleatoriamente asignando muros y vacíos dado el porcentaje de vacíos
 void Maze::generate() {
     arr = new int*[dim];
     for (int i = 0; i < dim; i++) {
@@ -26,13 +26,14 @@ void Maze::generate() {
         }
     }
 
-    // set the entrance and exit 
+	// Se setean las entradas y salidas del laberinto
     
     arr[0][0] = IN_DOOR;
     arr[dim-1][dim-1] = OUT_DOOR;
 }
 
 // Prints the maze using symbols
+// Imprime el laberinto usando símbolos (WALL: #, EMPTY: )
 void Maze::print(){
     for (int i = 0; i < dim; i++){
         for (int j = 0; j < dim; j++){
@@ -103,10 +104,12 @@ void Maze::solve(){
                 // Set the exit to OUT_DOOR for printing purposes (Exit gets overwritten by a visited node, so this way we will be able to recognize the exit)
                 arr[dim-1][dim-1] = OUT_DOOR;
                 // Then we go backwards using every previous node from the current node, so this way we can highlight our path using print()
-                markPath(currentNode);
+                //markPath(currentNode);
                 // If you wish to see the maze solution, uncomment the following lines:
                 //cout << currentNode->getPath() << endl;
                 //print();
+                closed->~Container();
+                open->~Heap();
                 cout << "Path found!" << endl;
                 return;
             }
