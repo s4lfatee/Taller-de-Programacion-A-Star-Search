@@ -1,2 +1,2 @@
-# Taller_Programacion
+# Taller_Programacion: A* Search
 =)
