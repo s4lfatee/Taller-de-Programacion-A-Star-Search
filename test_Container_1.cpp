@@ -1,16 +1,24 @@
 #include "Container.h"
+#include <stdlib.h>
+#include <time.h>
 
-int main(){
-    Container c(50);
-    c.setVisited(1,1);
-    c.setVisited(5,10);
-    c.print();
+int main() {
+    int n=20;
+    srand(time(NULL));
+    Container h(n);
 
-    if (c.isVisited(1,1)){
-        cout << "Visited" << endl;
+    // inserting random numbers
+    for(int i = 0; i < n; i++) {
+        int val=rand()%n;
+        Node *node = new Node(i, i, val, NULL);
+        cout<<"inserting "<<val<<endl;
+        h.insert(node);
+        delete node;
     }
-    else{
-        cout << "Not visited" << endl;
-    }
-    return 0;
-}
+
+    // printing heap
+    cout << "The Heap" <<endl;
+    h.print();
+
+    cout << h.peek() <<endl;
+ }

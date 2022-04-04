@@ -1,15 +1,26 @@
 #include <iostream>
-
+#include <math.h>
+#include "Node.h"
 using namespace std;
 
-class Container{
+/*
+Please document your code here.
+*/    
+class Container {
 public:
-	Container(int size);
-	~Container();
-	void print();
-	bool isVisited(int i, int j);
-	void setVisited(int i, int j);
+    Container(int size);
+    ~Container();
+    int isEmpty();
+    void insert(Node *node);
+    Node* pull();
+    int peek();
+    int getSize();
+    void print();
 private:
-	int size;
-	int **arr;
+    Node *arr;
+    int size;
+    int count;
+    void swap(int i, int j);
+    void bubbleUp();
+    void bubbleDown();
 };

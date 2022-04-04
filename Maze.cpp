@@ -84,9 +84,9 @@ int Maze::EuclideanDistance(int i, int j){
 // Solves the maze using A* algorithm
 void Maze::solve(){
     // Heap that will allow us to get the node with the lowest heuristic value
-    Heap *open = new Heap(dim*dim);
+    Container *open = new Container(dim*dim);
     // Container that will check if a cell has been visited through a matrix
-    Container *closed = new Container(dim);
+    Mark *closed = new Mark(dim);
 
     // set the entrance
     Node *start = new Node(0, 0, 0, NULL);
@@ -108,8 +108,8 @@ void Maze::solve(){
                 // If you wish to see the maze solution, uncomment the following lines:
                 //cout << currentNode->getPath() << endl;
                 //print();
-                closed->~Container();
-                open->~Heap();
+                closed->~Mark();
+                open->~Container();
                 cout << "Path found!" << endl;
                 return;
             }
@@ -155,4 +155,5 @@ void Maze::solve(){
         }
     }
     cout << "There is no solution to this maze" << endl;
+    return;
 }
