@@ -3,6 +3,6 @@
 int main() {
     Maze m(100, 80);
     m.print();
-    m.solve();
+    m.solve(); // Solve the maze
     return 0;
 }

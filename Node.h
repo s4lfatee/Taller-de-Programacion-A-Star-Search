@@ -2,7 +2,9 @@
 
 using namespace std;
 
-// needs an explanation of the class, please always comment your code
+// Node class that represents a cell state in the maze
+// contains i and j axis coordinates, an heuristic value (in maze context) and a pointer to the previous node
+
 class Node {
 public:
     Node();
@@ -24,7 +26,7 @@ public:
     
     // main methods
     int isRoot();
-    string getPath();
+    string getPath(); // Traces back the path by accessing the previous nodes
     void print();
 
 private:
