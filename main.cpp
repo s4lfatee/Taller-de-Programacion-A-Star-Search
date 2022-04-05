@@ -20,6 +20,6 @@ int main() {
         acum += time;
         m.generate(); // create another maze to solve for the next iteration
     }
-    cout << "Average time to solve: " << acum/100 << "[s]" << endl;
+    cout << "Average time to solve: " << acum/iterations << "[s]" << endl;
     return 0;
 }
