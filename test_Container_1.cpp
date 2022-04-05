@@ -20,5 +20,16 @@ int main() {
     cout << "The Heap" <<endl;
     h.print();
 
-    cout << h.peek() <<endl;
+    // testing isEmpty method
+    if (h.isEmpty()) {
+        cout << "The heap is empty!!" <<endl;
+    }
+    
+    // testing pull
+    cout << "Pulling the node with the lowest value" <<endl;
+    Node *node = h.pull();
+
+    cout << h.getSize() << endl;
+
+    cout << h.peek() << endl;
  }
