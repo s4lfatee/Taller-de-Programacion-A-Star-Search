@@ -1,6 +1,8 @@
 #include "Maze.h"
 #include <ctime>
 
+// main function of the whole assignment, it will measure the average time to solve 100 mazes
+
 int main() {
     unsigned t0, t1;
     int iterations;
