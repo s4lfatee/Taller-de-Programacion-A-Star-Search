@@ -1,7 +1,7 @@
-#include "Mark.h"
+#include "Matrix.h"
 
-Mark::Mark(int size){
-    Mark::size = size;
+Matrix::Matrix(int size){
+    Matrix::size = size;
     arr = new int*[size];
     for(int i = 0; i < size; i++){
         arr[i] = new int[size];
@@ -11,14 +11,14 @@ Mark::Mark(int size){
     }
 }
 
-Mark::~Mark(){
+Matrix::~Matrix(){
     for(int i = 0; i < size; i++){
         delete[] arr[i];
     }
     delete[] arr;
 }
 
-void Mark::print(){
+void Matrix::print(){
     for(int i = 0; i < size; i++){
         for(int j = 0; j < size; j++){
             cout << arr[i][j] << " ";
@@ -27,13 +27,13 @@ void Mark::print(){
     }
 }
 
-bool Mark::isVisited(int i, int j){
+bool Matrix::isVisited(int i, int j){
     if (arr[i][j] == 1){
         return true;
     }
     return false;
 }
 
-void Mark::setVisited(int i, int j){
+void Matrix::setVisited(int i, int j){
     arr[i][j] = 1;
 }

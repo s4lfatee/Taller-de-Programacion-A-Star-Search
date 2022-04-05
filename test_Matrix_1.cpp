@@ -1,7 +1,7 @@
-#include "Mark.h"
+#include "Matrix.h"
 
 int main(){
-    Mark c(50);
+    Matrix c(50);
     // Set both 1,1 and 5,10 to be visited
     c.setVisited(1,1);
     c.setVisited(5,10);

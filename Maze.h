@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Container.h"
-#include "Mark.h"
+#include "Matrix.h"
 #include <cstdlib>
 using namespace std;
 
@@ -23,9 +23,9 @@ public:
     void print(); // Prints the maze using symbols (WALL: #, EMPTY: , IN_DOOR: E, OUT_DOOR: S)
     void solve(); // solves the maze for the best path using the A* algorithm
     void generate(); // generates random maze
-    bool isValid(int i, int j); // Checks if the maze cell is within bounds
-    int EuclideanDistance(int i, int j); // Heuristic used for A*
 private:
+    int EuclideanDistance(int i, int j); // Heuristic used for A*
+    bool isValid(int i, int j); // Checks if the maze cell is within bounds
     int dim;
     int **arr;
     int void_percentage;

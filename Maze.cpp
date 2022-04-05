@@ -68,7 +68,7 @@ void Maze::solve(){
     // Container that will allow us to get the node with the lowest heuristic value (Heap)
     Container *open = new Container(dim*dim);
     // Mark class that will check if a cell has been visited through a matrix of the same size as the maze
-    Mark *closed = new Mark(dim);
+    Matrix *closed = new Matrix(dim);
 
     // set the entrance and insert it into the container
     Node *start = new Node(0, 0, 0, NULL);
@@ -80,7 +80,7 @@ void Maze::solve(){
         if (isValid(currentNode->get_i(), currentNode->get_j())){
             if (arr[currentNode->get_i()][currentNode->get_j()] == OUT_DOOR){   // It means that we found the exit, so we stop
                 // Free memory
-                closed->~Mark();
+                closed->~Matrix();
                 open->~Container();
                 cout << "Path found!" << endl;
                 return; // Exit the function
